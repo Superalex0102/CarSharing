@@ -1,56 +1,52 @@
 services:
 
-  # MySQL
   db:
-    image: mysql:latest
-    container_name: carsharing-mysql
+    image: postgres:16-alpine
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: carsharing
-      MYSQL_USER: alex
-      MYSQL_PASSWORD: 123456
+      POSTGRES_DB: carsharing
+      POSTGRES_PASSWORD: "!ChangeMe!"
+      POSTGRES_USER: admin
+    volumes:
+      - db:/var/lib/postgresql/data:rw
 
-  # PHPMyAdmin
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: carsharing-phpmyadmin
+  pgadmin:
+    image: dpage/pgadmin4
     ports:
-      - "8081:80"
+      - "8888:80"
     environment:
-      PMA_HOST: carsharing-mysql
-      MYSQL_ROOT_PASSWORD: 123456
+      PGADMIN_DEFAULT_EMAIL: superalex0102@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 123456
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
   api:
     container_name: carsharing-api
-    image: nginx:alpine
+    build: backend
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/carsharing
     ports:
       - "8088:8080"
-    networks:
-      - db
     depends_on:
       - db
     restart: unless-stopped
 
   react:
     container_name: carsharing-react
-    image: nginx:alpine
-    build:
-      context: frontend/react
-      args:
-        api_base_url: http://localhost:8088
+    image: node:latest
+    working_dir: /frontend
+    volumes:
+      - ./frontend:/frontend
     ports:
-      - "3000:5173"
+      - "3000:3000"
     depends_on:
       - api
     restart: unless-stopped
-
-networks:
-  db:
-    driver: bridge
+    command: bash -c "npm install && npm start"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   db:
+  pgadmin_data:
