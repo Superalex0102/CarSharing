@@ -1,19 +1,21 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import content from '../assets/images/carsharing-content.png'
+import content from '../assets/images/carsharing-content.png';
 
-export default function Hero() {
+function Hero() {
   return (
     <Box
       id="hero"
+      sx={{
+        display: { xs: 'none', md: 'block' }, // Hide on small screens, display on medium screens and up
+      }}
     >
       <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
+          pt: { xs: 14, sm: 15 },
         }}
       >
         <div
@@ -24,7 +26,8 @@ export default function Hero() {
         >
           <Box
             sx={{
-              width: '50%',
+              width: '100%',
+              maxWidth: '800px', // Set your desired maximum width
               boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
             }}
           >
@@ -39,3 +42,5 @@ export default function Hero() {
     </Box>
   );
 }
+
+export default Hero;

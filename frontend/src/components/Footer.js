@@ -1,3 +1,4 @@
+import { Box, Container } from '@mui/material';
 import React from 'react';
 
 function Footer() {
@@ -38,19 +39,21 @@ function Footer() {
     const topBrands = ['BMW', 'Audi', 'Mercedes', 'Toyota', 'Honda', 'Ford', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Nissan'];
 
     return (
-        <footer style={footerStyle}>
-            <div className="footer-content">
-                <div style={brandSectionStyle}>
-                    <h3>Top Brands</h3>
-                    {topBrands.map((brand, index) => (
-                        <button key={index} style={brandButtonStyle}>{brand}</button>
-                    ))}
-                </div>
+        <footer>
+            <Box sx={footerStyle}>
+                <Container sx={{footerStyle}}>
+                    <Box style={brandSectionStyle}>
+                        <h3>Top Brands</h3>
+                        {topBrands.map((brand, index) => (
+                            <button key={index} style={brandButtonStyle}>{brand}</button>
+                        ))}
+                    </Box>
+                </Container>
                 <div style={lastSectionStyle}>
                     © Made by Alex Somogyi
                 </div>
-            </div>
-        </footer>
+            </Box>
+        </footer >
     );
 }
 

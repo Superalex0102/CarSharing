@@ -1,22 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import AppBar from './App';
 import reportWebVitals from './reportWebVitals';
-import Hero from './components/Hero';
-import Search from './components/Search';
-import HighlightedAds from './components/HighlightedAds';
-import Footer from './components/Footer';
+import App from './App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <AppBar />
-    <Hero />
-    <Search />
-    <HighlightedAds />
-    <Footer/>
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 reportWebVitals();

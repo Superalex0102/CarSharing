@@ -21,7 +21,14 @@ export default function Search() {
 
     return (
         <Container maxWidth="lg">
-            <Card variant="outlined" sx={{ bgcolor: 'gray.100', p: 2, mt: 2 }}>
+            <Card
+                variant="outlined"
+                sx={{
+                    bgcolor: 'gray.100',
+                    p: 2,
+                    mt: { xs: 10, sm: 4 },
+                }}
+            >
                 <CardContent>
                     <Box display="flex" justifyContent="center" flexWrap="wrap" mb={2}>
                         <Box sx={{ m: 1, minWidth: 120, flex: '1 0 150px' }}>
@@ -141,11 +148,11 @@ export default function Search() {
                         </Box>
                     </Box>
                     <Box sx={{ m: 1, minWidth: 240, flex: '1 0 150px', display: 'flex', justifyContent: 'flex-end' }}>
-    <Button variant="contained" style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: 'fit-content', minWidth: '175px' }}>
-        <Typography style={{ fontSize: '1rem' }}>Search</Typography>
-        <Typography variant="subtitle2" style={{ fontSize: '0.8rem' }}>1 Found</Typography>
-    </Button>
-</Box>
+                        <Button variant="contained" style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: 'fit-content', minWidth: '175px' }}>
+                            <Typography style={{ fontSize: '1rem' }}>Search</Typography>
+                            <Typography variant="subtitle2" style={{ fontSize: '0.8rem' }}>1 Found</Typography>
+                        </Button>
+                    </Box>
                 </CardContent>
             </Card>
         </Container>
