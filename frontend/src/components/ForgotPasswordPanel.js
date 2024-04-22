@@ -8,7 +8,7 @@ function ForgotPasswordPanel() {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                pt: { xs: 14, sm: 15 },
+                pt: { xs: 3, sm: 3 },
             }}
         >
             <Typography variant="h4" fontWeight="bold" sx={{ marginBottom: 2 }}>
@@ -36,11 +36,14 @@ function ForgotPasswordPanel() {
                 target="_blank"
                 sx={{
                     backgroundColor: 'orangered',
+                    '&:hover': {
+                        backgroundColor: 'red',
+                    },
                     color: 'white',
                     width: '10%',
                 }}
             >
-                <Typography variant="button" fontWeight="bold">Login</Typography>
+                <Typography variant="button" fontWeight="bold">Send</Typography>
             </Button>
         </Container>
     );

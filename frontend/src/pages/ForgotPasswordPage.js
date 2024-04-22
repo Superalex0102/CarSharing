@@ -1,5 +1,5 @@
 import React from 'react';
-import AppAppBar from '../components/Appbar';
+import AppAppBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ForgotPasswordPanel from '../components/ForgotPasswordPanel';
 

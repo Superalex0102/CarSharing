@@ -1,8 +1,9 @@
-import { Box, Typography, Modal, FormControl, TextField, Checkbox, Button, Divider, Link, IconButton } from '@mui/material';
+import { Box, Typography, Modal, FormControl, TextField, Checkbox, Button, Divider, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
 
 export default function LoginModal({ open, onClose }) {
     const modalContent = (
@@ -63,7 +64,10 @@ export default function LoginModal({ open, onClose }) {
                         href="#"
                         target="_blank"
                         sx={{
-                            backgroundColor: 'blue3',
+                            backgroundColor: 'orangered',
+                            '&:hover': {
+                                backgroundColor: 'red',
+                            },
                             color: 'white',
                             width: 'auto',
                             m: 1,
@@ -140,7 +144,7 @@ export default function LoginModal({ open, onClose }) {
                     <Typography variant='body1' sx={{ marginTop: 2 }}>
                         <Typography
                             component={Link}
-                            to="/forgot-password"
+                            to="/register"
                             sx={{ cursor: 'pointer', textDecoration: 'underline' }}
                         >Register
                         </Typography>

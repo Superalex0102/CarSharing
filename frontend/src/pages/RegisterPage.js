@@ -1,5 +1,5 @@
 import React from 'react';
-import AppAppBar from '../components/Appbar';
+import AppAppBar from '../components/Navbar';
 import Footer from '../components/Footer';
 import RegisterPanel from '../components/RegisterPanel';
 import RegisterInfo from '../components/RegisterInfo';
@@ -10,9 +10,7 @@ function RegisterPage() {
     <React.StrictMode>
       <AppAppBar />
       <RegisterPanel />
-      <Box sx={{ marginBottom: 10 }}>
-        <RegisterInfo />
-      </Box>
+      <RegisterInfo />
       <Footer />
     </React.StrictMode>
   );

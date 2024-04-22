@@ -1,5 +1,5 @@
 import React from 'react';
-import AppAppBar from '../components/Appbar';
+import AppAppBar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Search from '../components/Search';
 import HighlightedAds from '../components/HighlightedAds';
