@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Footer() {
     const footerStyle = {
@@ -8,7 +8,7 @@ function Footer() {
         padding: '20px 0px 0px 0px',
         textAlign: 'center',
         borderTop: '1px solid #ddd',
-        marginTop: '20px',
+        marginTop: 'auto',
     };
 
     const brandButtonStyle = {
@@ -38,8 +38,25 @@ function Footer() {
 
     const topBrands = ['BMW', 'Audi', 'Mercedes', 'Toyota', 'Honda', 'Ford', 'Chevrolet', 'Volkswagen', 'Hyundai', 'Nissan'];
 
+    const [contentHeight, setContentHeight] = useState(0);
+
+    useEffect(() => {
+        const updateContentHeight = () => {
+            const content = document.getElementById('content');
+            if (content) {
+                setContentHeight(content.offsetHeight);
+            }
+        };
+
+        updateContentHeight();
+        window.addEventListener('resize', updateContentHeight);
+        return () => window.removeEventListener('resize', updateContentHeight);
+    }, []);
+
+    const minHeight = `calc(65vh - ${contentHeight}px)`;
+
     return (
-        <footer>
+        <footer style={{ display: 'flex', flexDirection: 'column', minHeight }}>
             <Box sx={footerStyle}>
                 <Container sx={{footerStyle}}>
                     <Box style={brandSectionStyle}>
@@ -53,7 +70,7 @@ function Footer() {
                     © Made by Alex Somogyi
                 </div>
             </Box>
-        </footer >
+        </footer>
     );
 }
 
