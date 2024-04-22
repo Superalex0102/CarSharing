@@ -14,9 +14,9 @@ A user can:
 - Save rental cars
 - Request notifications if a car becomes available for rental
 - Upon renting a car, the user can choose the rental period.
-- Submit an application to become an operator
-#### Operator 🚗
-An operator can:
+- Submit an application to become a partner
+#### Partner 🚗
+A partner can:
 - Create rental advertisements for their cars
 - Modify rental advertisements for their cars
 - Remove rental advertisements for their cars
@@ -24,7 +24,7 @@ An operator can:
 - View statistics regarding their cars
 #### Admin 👑
 An admin can:
-- Approve operator applications
+- Approve partner applications
 - Modify a user's role
 - Change a user's name, e-mail, password
 - Block a user from logging into the website
