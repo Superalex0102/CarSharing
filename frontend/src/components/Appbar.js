@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
@@ -9,12 +9,23 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
+import LoginModal from './LoginModal';
 
 function AppAppBar() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
+  };
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+    console.log('Modal opened');
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -60,7 +71,7 @@ function AppAppBar() {
                 px: 0,
               }}
             >
-              <h3 style={{ color: 'black', margin: '30px'  }}>CarSharing</h3>
+              <h3 style={{ color: 'black', margin: '30px' }}>CarSharing</h3>
             </Box>
             <Box
               sx={{
@@ -74,11 +85,11 @@ function AppAppBar() {
                 variant="text"
                 size="small"
                 component="a"
-                href="#"
-                target="_blank"
+                onClick={handleModalOpen}
               >
                 Login
               </Button>
+              <LoginModal open={isModalOpen} onClose={handleModalClose} />
               <Button
                 color="primary"
                 variant="text"
@@ -137,21 +148,21 @@ function AppAppBar() {
                       target="_blank"
                       sx={{ width: '100%' }}
                     >
-                      Regisztráció
+                      Register
                     </Button>
                   </MenuItem>
                   <MenuItem>
                     <Button
                       color="primary"
                       variant="outlined"
+                      onClick={handleModalOpen}
                       component="a"
-                      href="#"
-                      target="_blank"
                       sx={{ width: '100%' }}
                     >
-                      Bejelentkezés
+                      Login
                     </Button>
                   </MenuItem>
+                  <LoginModal open={isModalOpen} onClose={handleModalClose} />
                   <MenuItem>
                     <Button
                       color="primary"
@@ -161,7 +172,7 @@ function AppAppBar() {
                       target="_blank"
                       sx={{ width: '100%' }}
                     >
-                      Hirdetésfeladás
+                      Make An Ad
                     </Button>
                   </MenuItem>
                 </Box>

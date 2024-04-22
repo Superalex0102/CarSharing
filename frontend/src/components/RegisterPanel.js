@@ -12,7 +12,7 @@ function RegisterPanel() {
             }}
         >
             <Typography variant="h5" fontWeight="bold">
-                Regisztráció
+                Register
             </Typography>
             <Card
                 variant="outlined"
@@ -62,18 +62,18 @@ function RegisterPanel() {
                         <FormControl fullWidth sx={{ maxWidth: { xs: '100%', sm: 'calc(33.33% - 8px)' }, mb: 2, mx: 1 }}>
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="outlined-password-input"
                                 label="Password"
+                                type="password"
                                 helperText="The password must be at least 8 characters long"
-                                defaultValue=""
                             />
                         </FormControl>
                         <FormControl fullWidth sx={{ maxWidth: { xs: '100%', sm: 'calc(33.33% - 8px)' }, mb: 2, mx: 1 }}>
                             <TextField
                                 required
-                                id="outlined-required"
+                                id="outlined-password-input"
                                 label="Password again"
-                                defaultValue=""
+                                type="password"
                             />
                         </FormControl>
                     </Box>

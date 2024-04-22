@@ -33,17 +33,17 @@ export default function HighlightedAds() {
                 maxWidth: { xs: '80%', sm: '80%', md: 500 },
             }}
         >
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" fontWeight="bold" sx={{ m: 1 }}>
                 Highlighted Ads
                 <Divider />
             </Typography>
 
-            <Typography variant="body1" gutterBottom>
-                <p>Advertisers have the option to pay a fee, or to purchase highlighting using other payment methods available on the carsharing.hu website, which will display their ad in a different way from other ads on the homepage, in the designated zone.</p>
+            <Typography variant="body1" gutterBottom sx={{ p: 1 }}>
+                <Typography paragraph>Advertisers have the option to pay a fee, or to purchase highlighting using other payment methods available on the carsharing.hu website, which will display their ad in a different way from other ads on the homepage, in the designated zone.</Typography>
 
-                <p>The icon next to "Highlighted Ads" indicates that the ads displayed here have this active highlighting.</p>
+                <Typography paragraph>The icon next to "Highlighted Ads" indicates that the ads displayed here have this active highlighting.</Typography>
 
-                <p>The vehicle's listing page may also contain additional information about the final selling price. Be sure to check there for information before making a purchase.</p>
+                <Typography paragraph>The vehicle's listing page may also contain additional information about the final selling price. Be sure to check there for information before making a purchase.</Typography>
             </Typography>
         </Box>
     );
