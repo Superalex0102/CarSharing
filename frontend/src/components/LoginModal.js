@@ -1,7 +1,8 @@
-import { Box, Typography, Modal, FormControl, TextField, Checkbox, Button, Divider, Link } from '@mui/material';
+import { Box, Typography, Modal, FormControl, TextField, Checkbox, Button, Divider, Link, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function LoginModal({ open, onClose }) {
     const modalContent = (
@@ -16,9 +17,19 @@ export default function LoginModal({ open, onClose }) {
                 p: 2,
                 borderRadius: 4,
                 textAlign: 'left',
-                width: { xs: '80%', sm: '60%', md: '50%', lg: '25%'  },
+                width: { xs: '80%', sm: '60%', md: '50%', lg: '25%' },
             }}
         >
+            <IconButton
+                sx={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                }}
+                onClick={onClose}
+            >
+                <CloseIcon />
+            </IconButton>
             <Typography variant="h5" fontWeight="bold" sx={{ m: 1 }}>
                 Login
             </Typography>
