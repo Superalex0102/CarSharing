@@ -8,7 +8,7 @@ export default function LoginModal({ open, onClose }) {
         <Box
             sx={{
                 position: 'absolute',
-                top: '50%',
+                top: '55%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 bgcolor: 'background.paper',
@@ -16,7 +16,7 @@ export default function LoginModal({ open, onClose }) {
                 p: 2,
                 borderRadius: 4,
                 textAlign: 'left',
-                maxWidth: { xs: '100%', sm: '100%', md: 500 },
+                width: { xs: '80%', sm: '60%', md: '50%', lg: '25%'  },
             }}
         >
             <Typography variant="h5" fontWeight="bold" sx={{ m: 1 }}>
